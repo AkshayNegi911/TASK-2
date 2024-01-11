@@ -33,7 +33,7 @@ mongoose.connect(process.env.MONGO_URL);
 // }));
 app.use(express.urlencoded({ extended: true })); //used to decode data send using html format
 app.use(express.json()); // used to accept json fromat data
-app.use(express.static(path.join(__dirname+'/frontend')));// use to tell server where the frontend is
+app.use(express.static(path.join(__dirname+'/public')));// use to tell server where the frontend is
 
 // note : default url is "http://localhost:7261"
 

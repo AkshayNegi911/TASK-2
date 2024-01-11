@@ -1,22 +1,7 @@
-let isLoggedIn = false;
-
-// function toggleLogin() {
-//     isLoggedIn = !isLoggedIn;
-//     updateLoginStatus();
-//     // updateCarsSectionVisibility();
-// }
-
-// function updateLoginStatus() {
-//     const loginStatusElement = document.getElementById('login-status');
-//     loginStatusElement.innerText = isLoggedIn ? 'Logged in' : 'Not logged in';
-// }
-
 document.addEventListener('DOMContentLoaded', () => {
     // Attach the checkLoginStatus function to the page load event
     checkLoginStatus();
 
-    // Attach the carSectionVisibility function to the page load event
-    updateCarsSectionVisibility();
 
     // Attach the submitLoginForm function to the login form's onsubmit event
     const loginForm = document.getElementById('loginForm');
@@ -43,6 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+const regex = /^http:\/\/localhost:3000\/index\.html/;
+if (regex.test(String(window.location.href)) || String(window.location.href) === "http://localhost:3000/#") {
+    updateCarsSectionVisibility();
+}
 
 async function move({id}){
     const searchParams = String(window.location.href);
@@ -52,8 +41,6 @@ async function move({id}){
     
     // Check if the question mark is present
     if (startIndex !== -1) {
-        // Extract the substring from the question mark to the end
-        // const substringFromQuestionMark = searchParams.substring(questionMarkIndex);
         const substring = searchParams.substring(startIndex + 3); 
         // console.log(id);
         if(id === 'index'){
@@ -153,7 +140,17 @@ async function submitForm(event) {
         // Display a response message (you can customize this based on your needs)
         if (result.success) {
             alert(result.message);
-            window.location.href = '/index.html'; // Replace with the actual path to your index.html
+            const searchParams = String(window.location.href);
+            // find the extra content using substrings
+            const startIndex = searchParams.indexOf('Id=');
+            // Check if the question mark is present
+            if (startIndex !== -1) {
+                const substring = searchParams.substring(startIndex + 3); 
+                window.location.href = `/index.html?Id=${substring}`;
+            } 
+            else {
+                window.location.href = `/index.html`;
+            }
         } else {
             // Handle error scenarios here
             alert('Form submission failed. Please try again.');
