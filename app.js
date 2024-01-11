@@ -38,7 +38,7 @@ app.use(express.static(path.join(__dirname+'/frontend')));// use to tell server 
 // note : default url is "http://localhost:7261"
 
 
-console.log(process.env.MONGO_URL);
+// console.log(process.env.MONGO_URL);
 // mongoose.connect(process.env.MONGO_URL);
 
 
@@ -131,7 +131,7 @@ app.post('/login', async (req, res) => {
 // ... (remaining code)
 
 
-app.listen(3000,()=>{
+app.listen(process.env.PORT,()=>{
     console.log("running on port 3000");
 })
 
