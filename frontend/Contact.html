@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="CSS/Contact.css">
+    <title>Contact Form</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fa fa-car"></i>
+            </label>
+            <label class="logo">CARX</label>
+            <ul>
+
+                <li><a onclick="move({id})" id="index">Home</a></li>
+                <li><a onclick="move({id})" id = "contact" class="active">Contact Us</a></li>
+
+                <li id="loginLink"><a href="Login.html">Login</a></li>
+            <li id="logoutLink" style="display: none;"><a href="#" onclick="logout()">Logout</a></li>
+                <!-- <li id="login-status">Not logged in</li> -->
+                <!-- <li><button onclick="toggleLogin()">Login/Logout</button></li> -->
+            </ul>
+            <button type="radio"></button>
+            
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Contact Us</h1>
+        <form   id="contactForm" onsubmit="submitForm(event)" action="/submit-form" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

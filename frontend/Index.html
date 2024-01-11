@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="CSS/Style.css">
+    <title>Car Shop</title>
+</head>
+<body>
+    <header>
+        <nav>
+            
+            
+            <label class="logo">CARX</label>
+            <label for="check" class="checkbtn">
+                <i class="fa fa-car"></i>
+            </label>
+            <input type="checkbox" id="check">
+            <ul>
+                <li><a class="active" onclick="move({id})" id="index">Home</a></li>
+                <li><a onclick="move({id})" id = "contact">Contact Us</a></li>
+                <li id="loginLink"><a href="Login.html">Login</a></li>
+                <li id="logoutLink" style="display: none;"><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+            <!-- <button type="radio"></button> -->
+            
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Welcome to Our Car Shop</h2>
+        <p>Explore our amazing collection of cars.</p>
+    </section>
+
+    <section class="services">
+        <h2>Our Services</h2>
+
+        <div class="service">
+            <img src="/Images/car inspection.jpg" alt="Service 1">
+            <h3>Car Inspection</h3>
+            <p>We provide thorough car inspections to ensure the quality and condition of each vehicle.</p>
+        </div>
+
+        <div class="service">
+            <img src="Images/financing.jpg" alt="Service 2">
+            <h3>Financing Options</h3>
+            <p>Explore flexible financing options that suit your budget and preferences.</p>
+        </div>
+
+        <div class="service">
+            <img src="Images/test-drive.jpg" alt="Service 3">
+            <h3>Test Drives</h3>
+            <p>Schedule a test drive to experience the performance and features of your desired car.</p>
+        </div>
+    </section>
+
+    <section class="cars" id="cars-available-section">
+        <h2>Cars Available</h2>
+    
+        <h3 id="login-message">Please login to view available cars.</h3>
+    
+        <div class="car">
+            <img src="Images/car1.jpg" alt="Car 1">
+            <h3>Car Model 1</h3>
+            <p>Description of Car Model 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <!-- <button onclick="showDetails('Car Model 1')">Details</button> -->
+        </div>
+    
+        <div class="car">
+            <img src="Images/car2.jpg" alt="Car 2">
+            <h3>Car Model 2</h3>
+            <p>Description of Car Model 2. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <!-- <button onclick="showDetails('Car Model 2')">Details</button> -->
+        </div>
+
+        <div class="car">
+            <img src="Images/car3.jpg" alt="Car 2">
+            <h3>Car Model 2</h3>
+            <p>Description of Car Model 2. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <!-- <button onclick="showDetails('Car Model 2')">Details</button> -->
+        </div>
+    
+        <!-- Add more cars as needed -->
+    
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Car Shop</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
