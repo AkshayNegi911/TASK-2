@@ -28,11 +28,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-const regex = /^http:\/\/localhost:3000\/index\.html/;
-if (regex.test(String(window.location.href)) || String(window.location.href) === "http://localhost:3000/"
-    || String(window.location.href) === "http://localhost:3000/#") {
+
+// used for local host
+// const regex = /^http:\/\/localhost:3000\/index\.html/;
+// if (regex.test(String(window.location.href)) || String(window.location.href) === "http://localhost:3000/"
+//     || String(window.location.href) === "http://localhost:3000/#") {
+//     updateCarsSectionVisibility();
+// }
+
+// used for vercel
+const regex = /^http:\/\/car-selling-indol.vercel.app\/index\.html/;
+if (regex.test(String(window.location.href)) || String(window.location.href) === "http://car-selling-indol.vercel.app/"
+    || String(window.location.href) === "http://car-selling-indol.vercel.app/#") {
     updateCarsSectionVisibility();
 }
+
+
 
 async function move({id}){
     const searchParams = String(window.location.href);

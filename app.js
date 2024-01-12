@@ -49,6 +49,9 @@ app.get('/',(req,res) =>{
 app.get('/contact.html',(req,res) =>{
     res.sendFile(path.join(__dirname+'/public/Contact.html'));
 })
+app.get('/index.html',(req,res) =>{
+    res.sendFile(path.join(__dirname+'/public/Index.html'));
+})
 
 // used to create users which is done by contact us page
 app.post('/submit-form',async (req, res) => {
