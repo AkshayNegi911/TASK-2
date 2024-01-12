@@ -46,7 +46,9 @@ app.use(express.static(path.join(__dirname+'/public')));// use to tell server wh
 app.get('/',(req,res) =>{
     res.sendFile(path.join(__dirname+'/public/Index.html'));
 })
-
+app.get('/contact.html',(req,res) =>{
+    res.sendFile(path.join(__dirname+'/public/Contact.html'));
+})
 
 // used to create users which is done by contact us page
 app.post('/submit-form',async (req, res) => {
