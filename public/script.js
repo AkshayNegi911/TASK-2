@@ -191,7 +191,7 @@ function updateCarsSectionVisibility() {
     // Check if there are any search parameters
     const hasSearchParams = searchParams.includes("?Id=");
 
-    if(carsSection){
+    if(carsSection && loginMessage){
         if (hasSearchParams) {
             carsSection.style.display = 'block';
             loginMessage.style.display = 'none';
