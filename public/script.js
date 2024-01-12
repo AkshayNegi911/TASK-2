@@ -37,9 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
 // }
 
 // used for vercel
-const regex = /^http:\/\/car-selling-indol.vercel.app\/index\.html/;
-if (regex.test(String(window.location.href)) || String(window.location.href) === "http://car-selling-indol.vercel.app/"
-    || String(window.location.href) === "http://car-selling-indol.vercel.app/#") {
+const regex = /^https:\/\/car-selling-indol.vercel.app\/index\.html/;
+if (regex.test(String(window.location.href)) || String(window.location.href) === "https://car-selling-indol.vercel.app/"
+    || String(window.location.href) === "https://car-selling-indol.vercel.app/#") {
     updateCarsSectionVisibility();
 }
 
