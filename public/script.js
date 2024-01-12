@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const regex = /^http:\/\/localhost:3000\/index\.html/;
-if (regex.test(String(window.location.href)) || String(window.location.href) === "http://localhost:3000/#") {
+if (regex.test(String(window.location.href)) || String(window.location.href) === "http://localhost:3000/"
+    || String(window.location.href) === "http://localhost:3000/#") {
     updateCarsSectionVisibility();
 }
 
@@ -165,7 +166,7 @@ async function submitForm(event) {
 async function logout(){
             alert('Logout successful! Redirecting to the home page.');
             // localStorage.removeItem('sessionId'); // Clear the stored session ID
-            window.location.href = '/index.html'; // Redirect to the login page
+            window.location.href = `/index.html`; // Redirect to the login page
 }
 
 

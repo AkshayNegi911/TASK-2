@@ -43,7 +43,7 @@ app.use(express.static(path.join(__dirname+'/public')));// use to tell server wh
 // console.log(process.env.MONGO_URL);
 // mongoose.connect(process.env.MONGO_URL);
 
-app.get('*',(req,res) =>{
+app.get('/',(req,res) =>{
     res.sendFile(path.join(__dirname+'/public/Index.html'));
 })
 
