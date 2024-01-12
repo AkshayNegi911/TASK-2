@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Attach the checkLoginStatus function to the page load event
     checkLoginStatus();
-    updateCarsSectionVisibility();
 
     // Attach the submitLoginForm function to the login form's onsubmit event
     const loginForm = document.getElementById('loginForm');
@@ -27,22 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
-
-
-// used for local host
-// const regex = /^http:\/\/localhost:3000\/index\.html/;
-// if (regex.test(String(window.location.href)) || String(window.location.href) === "http://localhost:3000/"
-//     || String(window.location.href) === "http://localhost:3000/#") {
-//     updateCarsSectionVisibility();
-// }
-
-// // used for vercel
-// const regex = /^https:\/\/car-selling-indol.vercel.app\/index\.html/;
-// if (regex.test(String(window.location.href)) || String(window.location.href) === "https://car-selling-indol.vercel.app/"
-//     || String(window.location.href) === "https://car-selling-indol.vercel.app/#") {
-//     updateCarsSectionVisibility();
-// }
-
 
 
 async function move({id}){
@@ -87,10 +70,14 @@ async function checkLoginStatus() {
             // User is logged in
             document.getElementById('loginLink').style.display = 'none';
             document.getElementById('logoutLink').style.display = 'block';
+            document.getElementById('cars-available-section') && (document.getElementById('cars-available-section').style.display = 'block');
+            document.getElementById('login-message') && (document.getElementById('login-message').style.display = 'none');
         } else {
             // User is not logged in
             document.getElementById('loginLink').style.display = 'block';
             document.getElementById('logoutLink').style.display = 'none';
+            document.getElementById('cars-available-section') && (document.getElementById('cars-available-section').style.display = 'none');
+            document.getElementById('login-message') && (document.getElementById('login-message').style.display = 'block');
         }
 }
 
@@ -176,32 +163,7 @@ async function submitForm(event) {
 // function used to logout of current session
 async function logout(){
             alert('Logout successful! Redirecting to the home page.');
-            // localStorage.removeItem('sessionId'); // Clear the stored session ID
             window.location.href = `/index.html`; // Redirect to the login page
 }
 
-
-
-function updateCarsSectionVisibility() {
-    const carsSection = document.getElementById('cars-available-section');
-    const loginMessage = document.getElementById('login-message');
-
-
-    console.log("It is getting executed")
-    const searchParams = String(window.location.href);
-
-    // Check if there are any search parameters
-    const hasSearchParams = searchParams.includes("?Id=");
-
-    if(carsSection && loginMessage){
-        if (hasSearchParams) {
-            carsSection.style.display = 'block';
-            loginMessage.style.display = 'none';
-        } else {
-            carsSection.style.display = 'none';
-            loginMessage.style.display = 'block';
-        }
-    }
-    
-}
 
