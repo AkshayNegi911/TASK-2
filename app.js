@@ -35,11 +35,17 @@ app.use(express.urlencoded({ extended: true })); //used to decode data send usin
 app.use(express.json()); // used to accept json fromat data
 app.use(express.static(path.join(__dirname+'/public')));// use to tell server where the frontend is
 
+
+
 // note : default url is "http://localhost:7261"
 
 
 // console.log(process.env.MONGO_URL);
 // mongoose.connect(process.env.MONGO_URL);
+
+app.get('*',(req,res) =>{
+    res.sendFile(path.join(__dirname+'/public/Index.html'));
+})
 
 
 // used to create users which is done by contact us page
