@@ -186,20 +186,22 @@ function updateCarsSectionVisibility() {
     const carsSection = document.getElementById('cars-available-section');
     const loginMessage = document.getElementById('login-message');
 
-    const searchParams = String(window.location.href);
 
-    // Check if there are any search parameters
-    const hasSearchParams = searchParams.includes("?Id=");
+    console.log("It is getting executed")
+    // const searchParams = String(window.location.href);
 
-    if(carsSection){
-        if (hasSearchParams) {
-            carsSection.style.display = 'block';
-            loginMessage.style.display = 'none';
-        } else {
-            carsSection.style.display = 'none';
-            loginMessage.style.display = 'block';
-        }
-    }
+    // // Check if there are any search parameters
+    // const hasSearchParams = searchParams.includes("?Id=");
+
+    // if(carsSection && loginMessage){
+    //     if (hasSearchParams) {
+    //         carsSection.style.display = 'block';
+    //         loginMessage.style.display = 'none';
+    //     } else {
+    //         carsSection.style.display = 'none';
+    //         loginMessage.style.display = 'block';
+    //     }
+    // }
     
 }
 
