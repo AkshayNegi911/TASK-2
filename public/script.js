@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Attach the checkLoginStatus function to the page load event
     checkLoginStatus();
-
+    updateCarsSectionVisibility();
 
     // Attach the submitLoginForm function to the login form's onsubmit event
     const loginForm = document.getElementById('loginForm');
@@ -36,12 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
 //     updateCarsSectionVisibility();
 // }
 
-// used for vercel
-const regex = /^https:\/\/car-selling-indol.vercel.app\/index\.html/;
-if (regex.test(String(window.location.href)) || String(window.location.href) === "https://car-selling-indol.vercel.app/"
-    || String(window.location.href) === "https://car-selling-indol.vercel.app/#") {
-    updateCarsSectionVisibility();
-}
+// // used for vercel
+// const regex = /^https:\/\/car-selling-indol.vercel.app\/index\.html/;
+// if (regex.test(String(window.location.href)) || String(window.location.href) === "https://car-selling-indol.vercel.app/"
+//     || String(window.location.href) === "https://car-selling-indol.vercel.app/#") {
+//     updateCarsSectionVisibility();
+// }
 
 
 
@@ -191,15 +191,15 @@ function updateCarsSectionVisibility() {
     // Check if there are any search parameters
     const hasSearchParams = searchParams.includes("?Id=");
 
-    if (hasSearchParams) {
-        carsSection.style.display = 'block';
-        loginMessage.style.display = 'none';
-    } else {
-        carsSection.style.display = 'none';
-        loginMessage.style.display = 'block';
+    if(carsSection){
+        if (hasSearchParams) {
+            carsSection.style.display = 'block';
+            loginMessage.style.display = 'none';
+        } else {
+            carsSection.style.display = 'none';
+            loginMessage.style.display = 'block';
+        }
     }
+    
 }
 
-// Call updateLoginStatus and updateCarsSectionVisibility on page load (optional)
-// updateLoginStatus();
-// updateCarsSectionVisibility();
