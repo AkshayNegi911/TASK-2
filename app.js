@@ -17,16 +17,16 @@ app.use(express.urlencoded({ extended: true })); //used to decode data send usin
 app.use(express.json()); // used to accept json fromat data
 app.use(express.static(path.join(__dirname+'/public')));// use to tell server where the frontend is
 
-
-app.get('/',(req,res) =>{
-    res.sendFile(path.join(__dirname+'/public/Index.html'));
-})
-app.get('/contact.html',(req,res) =>{
-    res.sendFile(path.join(__dirname+'/public/Contact.html'));
-})
-app.get('/index.html',(req,res) =>{
-    res.sendFile(path.join(__dirname+'/public/Index.html'));
-})
+// the below 3 get functions are for vercel to get the page when asked for it
+// app.get('/',(req,res) =>{
+//     res.sendFile(path.join(__dirname+'/public/Index.html'));
+// })
+// app.get('/contact.html',(req,res) =>{
+//     res.sendFile(path.join(__dirname+'/public/Contact.html'));
+// })
+// app.get('/index.html',(req,res) =>{
+//     res.sendFile(path.join(__dirname+'/public/Index.html'));
+// })
 
 // used to create users which is done by contact us page
 app.post('/submit-form',async (req, res) => {
@@ -44,7 +44,7 @@ app.post('/submit-form',async (req, res) => {
   })
 
 
-// used to login the user means to create a session
+// used to login the user
 app.post('/login', async (req, res) => {
     // mongoose.connect(process.env.MONGO_URL);
     const { username, password } = req.body;
