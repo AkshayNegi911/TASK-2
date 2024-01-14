@@ -18,15 +18,15 @@ app.use(express.json()); // used to accept json fromat data
 app.use(express.static(path.join(__dirname+'/public')));// use to tell server where the frontend is
 
 // the below 3 get functions are for vercel to get the page when asked for it
-// app.get('/',(req,res) =>{
-//     res.sendFile(path.join(__dirname+'/public/Index.html'));
-// })
-// app.get('/contact.html',(req,res) =>{
-//     res.sendFile(path.join(__dirname+'/public/Contact.html'));
-// })
-// app.get('/index.html',(req,res) =>{
-//     res.sendFile(path.join(__dirname+'/public/Index.html'));
-// })
+app.get('/',(req,res) =>{
+    res.sendFile(path.join(__dirname+'/public/Index.html'));
+})
+app.get('/contact.html',(req,res) =>{
+    res.sendFile(path.join(__dirname+'/public/Contact.html'));
+})
+app.get('/index.html',(req,res) =>{
+    res.sendFile(path.join(__dirname+'/public/Index.html'));
+})
 
 // used to create users which is done by contact us page
 app.post('/submit-form',async (req, res) => {
